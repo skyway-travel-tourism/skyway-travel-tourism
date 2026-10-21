@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082f49">
+  <meta name="description" content="SkyWay Travel & Tourism — visa assistance, flight enquiries and holiday packages.">
+  <title>SkyWay Travel & Tourism</title>
+  <style>
+    :root{--navy:#082f49;--blue:#075985;--teal:#14b8a6;--mint:#ccfbf1;--ink:#102a43;--muted:#526579;--paper:#f3f8fb;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1100px,100% - 32px);margin:auto}
+    header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #082f4920}
+    .top{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;line-height:1.15}
+    .logo{width:46px;height:46px;border-radius:15px;background:var(--teal);display:grid;place-items:center;font-size:25px;box-shadow:inset 0 0 0 2px #ffffff55}
+    .brand small{display:block;color:#a7f3e8;font-size:11px;letter-spacing:1.6px;margin-top:5px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{text-decoration:none;font-size:14px;font-weight:700;color:#e7f6ff}
+    nav a:hover{color:#5eead4}
+    .hero{color:white;background:radial-gradient(circle at 90% 20%,#14b8a644,transparent 30%),linear-gradient(135deg,#075985,#082f49);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:28px;padding-top:64px;padding-bottom:64px}
+    .eyebrow{display:inline-block;background:#ccfbf122;border:1px solid #99f6e455;color:#99f6e4;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    h1{font-size:clamp(34px,5vw,58px);line-height:1.08;margin:18px 0}
+    .hero p{color:#e0f2fe;font-size:17px;max-width:570px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border:0;border-radius:12px;text-decoration:none;font-weight:800;cursor:pointer;font-size:15px}
+    .btn-primary{background:var(--teal);color:#042f2e}
+    .btn-light{background:#fff;color:var(--navy)}
+    .btn-outline{border:1px solid #ffffff80;color:#fff;background:transparent}
+    .visual{min-height:310px;position:relative;display:grid;place-items:center}
+    .globe{width:min(300px,78vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#99f6e4,#14b8a6 45%,#075985 78%);box-shadow:0 25px 70px #001b2d66;position:relative;font-size:105px}
+    .orbit{position:absolute;width:115%;height:45%;border:2px solid #ccfbf177;border-radius:50%;transform:rotate(-25deg)}
+    .float{position:absolute;background:#fff;color:var(--navy);padding:11px 14px;border-radius:14px;font-weight:800;box-shadow:0 12px 28px #001b2d30;font-size:13px}
+    .float.one{top:20px;left:0}.float.two{right:0;bottom:25px}
+    .trust{background:white;border-bottom:1px solid #e2edf3}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:19px 0;text-align:center;font-weight:700;color:var(--navy);font-size:14px}
+    section{padding:58px 0}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 28px}
+    .section-head h2{font-size:clamp(27px,4vw,38px);margin:0 0 8px;color:var(--navy)}
+    .section-head p{margin:0;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border:1px solid #e2edf3;border-radius:18px;padding:22px;box-shadow:0 8px 24px #082f490a}
+    .icon{width:52px;height:52px;border-radius:16px;background:var(--mint);display:grid;place-items:center;font-size:27px;margin-bottom:14px}
+    .card h3{margin:0 0 7px;color:var(--navy)}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .destinations{background:#eaf4f8}
+    .destination{min-height:185px;border-radius:18px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;color:white;overflow:hidden;position:relative;background:linear-gradient(0deg,#082f49ee,#082f4922),var(--bg,#075985)}
+    .destination:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,#99f6e477,transparent 25%)}
+    .destination>*{position:relative}
+    .destination .flag{font-size:34px}
+    .destination h3{font-size:22px;margin:6px 0 0}
+    .destination p{margin:2px 0 0;color:#e0f2fe;font-size:13px}
+    .enquiry-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px;align-items:start}
+    .contact-panel{background:var(--navy);color:#fff;border-radius:20px;padding:26px}
+    .contact-panel h2{margin-top:0;font-size:28px;line-height:1.2}
+    .contact-panel p{color:#dbeafe}
+    .contact-line{padding:12px 0;border-top:1px solid #ffffff25}
+    form{background:#fff;padding:24px;border-radius:20px;border:1px solid #e2edf3;box-shadow:0 8px 24px #082f490a}
+    label{display:block;font-size:13px;font-weight:800;margin:10px 0 5px}
+    input,select,textarea{width:100%;padding:13px;border:1px solid #cbd8e2;border-radius:10px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+    textarea{min-height:90px;resize:vertical}
+    .form-note{font-size:12px;color:var(--muted);margin:10px 0 0}
+    footer{background:#041f32;color:#dbeafe;padding:28px 0;text-align:center;font-size:13px}
+    footer strong{color:white}
+    .wa-float{position:fixed;right:16px;bottom:16px;z-index:20;background:#16a34a;color:white;border-radius:999px;padding:13px 16px;text-decoration:none;font-weight:800;box-shadow:0 8px 25px #0003}
+    @media(max-width:760px){
+      .top{padding:12px 0;align-items:flex-start;flex-direction:column}
+      nav{width:100%;gap:16px;overflow-x:auto;padding:2px 0 5px}
+      nav a{white-space:nowrap;font-size:13px}
+      .hero-grid{grid-template-columns:1fr;padding-top:42px;padding-bottom:36px;gap:8px}
+      .hero p{font-size:16px}
+      .visual{min-height:255px}
+      .globe{width:215px;font-size:78px}
+      .float.one{left:2px;top:8px}.float.two{right:2px;bottom:10px}
+      .trust-row{grid-template-columns:1fr;gap:7px;text-align:left}
+      section{padding:42px 0}
+      .cards{grid-template-columns:1fr}
+      .destination{min-height:155px}
+      .enquiry-grid{grid-template-columns:1fr}
+      form{padding:18px}
+      .wa-float{right:12px;bottom:12px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap top">
+      <a class="brand" href="#home" aria-label="SkyWay Travel home">
+        <span class="logo">✈</span>
+        <span>SkyWay Travel<small> &amp; TOURISM</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#enquiry">Enquiry</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Your journey, made easier</span>
+          <h1>Explore more.<br>Worry less.</h1>
+          <p>Visa assistance, flight enquiries and holiday packages — let’s plan your next journey with SkyWay Travel &amp; Tourism.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#enquiry">✈ Send an Enquiry</a>
+            <a class="btn btn-outline" href="#services">Explore Services</a>
+          </div>
+        </div>
+        <div class="visual" aria-label="Travel illustration">
+          <div class="globe">🌍<div class="orbit"></div></div>
+          <div class="float one">✈ Your next adventure</div>
+          <div class="float two">🌴 Holiday starts here</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="wrap trust-row">
+        <div>✓ Personalised travel support</div>
+        <div>✓ Enquiries made simple</div>
+        <div>✓ WhatsApp contact</div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How can we help you travel?</h2>
+          <p>Choose a service and send us your requirements. We’ll follow up to discuss options and availability.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">🌍</div><h3>Visa Assistance</h3><p>Get information and application assistance for your intended destination. Visa decisions depend on the relevant authorities.</p></article>
+          <article class="card"><div class="icon">✈️</div><h3>Flight Enquiries</h3><p>Share your destination, dates and passenger count so we can discuss suitable flight options.</p></article>
+          <article class="card"><div class="icon">🏖️</div><h3>Holiday Packages</h3><p>Explore ideas for family holidays, city breaks and international trips tailored to your plans.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="destinations" id="destinations">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Popular destinations</h2>
+          <p>Tell us where you want to go. Packages, prices and availability are confirmed individually.</p>
+        </div>
+        <div class="cards">
+          <article class="destination" style="--bg:linear-gradient(135deg,#0e7490,#164e63)"><span class="flag">🇦🇪</span><h3>Dubai &amp; UAE</h3><p>City experiences and local getaways</p></article>
+          <article class="destination" style="--bg:linear-gradient(135deg,#0f766e,#134e4a)"><span class="flag">🇦🇲</span><h3>Armenia</h3><p>Mountain views and cultural trips</p></article>
+          <article class="destination" style="--bg:linear-gradient(135deg,#0369a1,#1e3a8a)"><span class="flag">🇳🇿</span><h3>New Zealand</h3><p>Nature, scenery and adventure</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="enquiry">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Let’s plan your trip</h2>
+          <p>Fill in the details. Your WhatsApp app will open with a ready-to-send enquiry.</p>
+        </div>
+        <div class="enquiry-grid">
+          <aside class="contact-panel">
+            <h2>Your journey starts with a message.</h2>
+            <p>Share your travel plans with SkyWay Travel &amp; Tourism. We’ll use your details to understand the enquiry and contact you about next steps.</p>
+            <div class="contact-line">💬 <strong>WhatsApp</strong><br>+971 50 837 2026</div>
+            <div class="contact-line">🧭 <strong>Services</strong><br>Visa • Flights • Tours</div>
+          </aside>
+          <form id="travelForm">
+            <label for="name">Your name *</label>
+            <input id="name" name="name" autocomplete="name" required placeholder="Enter your name">
+            <label for="phone">Your phone / WhatsApp *</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="Include country code">
+            <label for="service">Service *</label>
+            <select id="service" name="service" required>
+              <option>Visa Assistance</option><option>Flight Booking Enquiry</option><option>Tour Package</option>
+            </select>
+            <label for="destinationInput">Destination *</label>
+            <input id="destinationInput" name="destination" required placeholder="e.g. Armenia, Dubai, New Zealand">
+            <label for="date">Travel date *</label>
+            <input id="date" name="date" type="date" required>
+            <label for="people">Passengers</label>
+            <select id="people" name="people"><option>1 person</option><option>2 people</option><option>3–5 people</option><option>6+ people</option></select>
+            <label for="details">Extra details</label>
+            <textarea id="details" name="details" placeholder="Tell us about your requirements (optional)"></textarea>
+            <button class="btn btn-primary" type="submit" style="width:100%">Send Enquiry on WhatsApp ↗</button>
+            <p class="form-note">This form opens WhatsApp; it does not submit or store your details on this website. Please check the message before sending.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><strong>✈ SkyWay Travel &amp; Tourism</strong><br>Visa assistance • Flight enquiries • Holiday packages<br><span>Prices, availability and visa eligibility are subject to confirmation.</span></div>
+  </footer>
+  <a class="wa-float" href="https://wa.me/971508372026" target="_blank" rel="noopener">WhatsApp us</a>
+
+  <script>
+    const form = document.getElementById('travelForm');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const value = id => document.getElementById(id).value.trim();
+      const message = [
+        'Travel Enquiry - SkyWay Travel & Tourism',
+        'Name: ' + value('name'),
+        'Phone: ' + value('phone'),
+        'Service: ' + value('service'),
+        'Destination: ' + value('destinationInput'),
+        'Travel Date: ' + value('date'),
+        'Passengers: ' + value('people'),
+        'Details: ' + (value('details') || 'Not provided')
+      ].join('\n');
+      const url = 'https://wa.me/971508372026?text=' + encodeURIComponent(message);
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
